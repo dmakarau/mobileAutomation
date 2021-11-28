@@ -1,0 +1,28 @@
+# Into
+The test task was implemented using the following technologies:
+- Appium
+- Serenity BDD as a wrapper for tests
+- Cucumber as BDD framework
+- TestNG as testing framework
+- Maven as bulding system
+- Java as programming language
+The tests are written in BDD style. In folder `src/test/resources/features` there is a feature file with the two test scenarios.
+
+# Preconditions
+- JVM 1.8 or later
+- Apache Maven 3.6.3
+- Inside the app, add the apk file of the application
+- Inside the TestData.java the valid credentials for login should be added (to prevent to pushing password to the github)
+
+ P.S. I know it is also not gut to store the credentials in the java file, but depending on the realisation and integration with CI, we might want to use Github actions 
+ secrets to store the confidential data.
+ Also I test this project only on Android app, but it should also work with ios (see serenity.properties file), but the locators for the ios app should be added in the page
+ objects.
+
+# Run the tests
+- to run all 2 task: `mvn clean verify`- Maven will install all the necessary dependencies and run the tests
+- `mvn serenity :aggregate`to generate the test report (index.html file)
+- directly from the IDE, from Runner.java file
+
+After test execution - the test report with the screenshot is located in the 
+`target/site/serenity/index.html`
